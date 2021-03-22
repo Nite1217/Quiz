@@ -1,28 +1,28 @@
 var questions = [
     {
         title: "Commonly used data types DO Not include:",
-        choices: ["1.strings", "2.booleans", "3.alerts", "4.numbers"],
-        answer: "alerts"
+        choices: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
+        answer: "Alerts"
     },
     {
         title: "The condition in an if / else statement is enclosed with ____.",
-        choices: ["1.quotes", "2.curly brackets", "3.parentheses", "4.square brackets"],
-        answer: "parentheses"
+        choices: ["1. Quotes", "2. Curly Brackets", "3. Parenthesis", "4. Square Brackets"],
+        answer: "Parentheses"
     },
     {
         title: "Arrays in Javascript can be used to store ____.",
-        choices: ["1.numbers and strings", "2.other arrays", "3.booleans", "4.all of the above"],
-        answer: "all of the above"
+        choices: ["1. Numbers and Strings", "2. Other Arrays", "3. Booleans", "4. All of the Above"],
+        answer: "All of the above"
     },
     {
         title: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["1.commas", "2.curly brackets", "3.quotes", "4.parenthesis"],
-        answer: "quotes"
+        choices: ["1. Commas", "2. Curly brackets", "3. Quotes", "4. Parenthesis"],
+        answer: "Quotes"
     },
     {
         title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
-        choices: ["Javascript", "terminal / bash", "for loops", "console log"],
-        answer: "console log"
+        choices: ["1. Javascript", "2. Terminal / Bash", "3. For Loops", "4. Console Log"],
+        answer: "Console Log"
     },
 
 ];
@@ -35,7 +35,7 @@ var questionsDiv = document.querySelector("#questionsDiv");
 var wrapper = document.querySelector("#wrapper");
 
 // Seconds left is 15 seconds per question:
-var secondsLeft = 76;
+var secondsLeft = 75;
 // Holds interval time
 var holdInterval = 0;
 // Holds penalty time
@@ -76,33 +76,35 @@ function render(questionIndex) {
     }
 
         userChoices.forEach(function (newItem) {
-        var listItem = document.createElement("li");
-        listItem.textContent = newItem;
-        questionsDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
-        listItem.addEventListener("click", (compare));
-    });
+               var choiceButton = document.createElement('button');
+               choiceButton.setAttribute('class', 'choiceButton');
+               choiceButton.setAttribute('value', newItem);
+       
+               choiceButton.textContent = newItem;
+               questionsDiv.appendChild(ulCreate);
+               ulCreate.appendChild(choiceButton);
+               choiceButton.addEventListener("click", (compare));
+           });
 }
 
 function compare(event) {
     var element = event.target;
 
-    if (element.matches("li")) {
+    if (element.matches("button")) {
 
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         // Correct condition 
         if (element.textContent == questions[questionIndex].answer) {
             score++;
-            createDiv.textContent = ("Correct! "); 
+            createDiv.textContent = "Correct!  " + questions[questionIndex].answer;
             // Correct condition 
         } else {
-            // Will deduct -5 seconds off secondsLeft for wrong answers
             secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = ("Wrong! ");
+            createDiv.textContent = "Wrong!   " + questions[questionIndex].answer;
         }
-
     }
+
     // Question Index determines number question user is on
     questionIndex++;
 
@@ -112,7 +114,7 @@ function compare(event) {
     } else {
         render(questionIndex);
     }
-    questionsDiv.appendChild(createDiv);
+   questionsDiv.appendChild(createDiv);
 
 }
 // All done will append last page
