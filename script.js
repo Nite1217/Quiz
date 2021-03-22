@@ -196,5 +196,4 @@ function allDone() {
             window.location.replace("./HighScores.html");
         }
     });
-
 }

@@ -1,4 +1,5 @@
-        .wrapper {
+
+      #wrapper {
             position: absolute;
             left: 30%;
             top: 20%;
@@ -6,22 +7,22 @@
             height: 500px;
             border: 1px solid purple;
         }
-        .startTime {
+        #startTime {
             background-color: purple;
             margin-left: 33%;
             padding: 15px 32px;
             font-size: 20px;
             color: white;
         }
-        .questionsDiv {
+        #questions {
             margin: 20px;
         }
 
-        .currentTime {
+        #currentTime {
             float: right;
         }
 
-        .goBack {
+        #goBack {
             background-color: purple;
             position: relative;
             padding: 10px;
@@ -34,9 +35,7 @@
             text-decoration: none;
         }
 
-
-
-        .clear {
+        #clear {
             background-color: purple;
             position: relative;
             padding: 10px;
@@ -47,16 +46,16 @@
             text-align: center;
         }
 
-        .button {
+        #button {
             border-radius: 8px;
         }
 
-        .textarea {
+        #textarea {
             width: 90%;
             margin: 20px;
         }
 
-        .Submit {
+        #submit {
             background-color: purple;
             margin-left: 33%;
             padding: 15px 32px;
@@ -64,20 +63,20 @@
             color: white;
         }
 
-        .label {
+        #label {
             margin-right: 10px;
         }
-        .input {
+        #input {
             margin-bottom: 20px;
             width: 50%;
             border: 1px solid lightgray;
         }
 
-        .h1 {
+        #h1 {
             text-align: center;
         }
 
-        .li {
+        #li {
             background-color: purple;
             margin-top: 10px;
             padding: 5px 15px;
@@ -86,7 +85,7 @@
             color: white;
         }
 
-        .createDiv {
+        #createDiv {
             margin-top: 20px;
             border-top: 1px solid lightgray;
         }
